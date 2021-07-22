@@ -1,6 +1,4 @@
-*.jpeg
-*.jpg
+
 venv/
 core/__pycache__/
 *.pyc
-*.png
