@@ -17,11 +17,6 @@
             {{img_obj.get_image_name}}
         </h2>
 
-
-
-
-
-
         <form action="{% url 'resize_image_link' %}" enctype="multipart/form-data" method="post">
             {% csrf_token %}
             <label for="link">Высота</label>
