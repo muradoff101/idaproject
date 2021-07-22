@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main page</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <a href="#">
+            Назад к списку
+        </a>
+        <h2>
+            {{img_obj.get_image_name}}
+        </h2>
+
+
+
+
+
+
+        <form action="{% url 'resize_image_link' %}" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <label for="link">Высота</label>
+            <input type="text" id="height" name="height" value="{{height}}">
+            <br><br>
+            <label for="link">Ширина</label>
+            <input type="text" id="width" name="width" value="{{width}}">
+            <br><br>
+            <input type="hidden" name="image" value="{{img_obj.image}}">
+            <input type="submit" value="Обрезать">
+        </form>
+        <br><br>
+
+        <img src="{{img_obj.image.url}}" alt="" width="150">
+    </div>
+</body>
+
+</html>
